@@ -20,6 +20,7 @@ namespace Multiplayer_flashero.Entidades.objetos.consumibles
 
         public override bool usarObjeto(Jugador jugador)
         {
+            this.disminuirCantidad();
             switch (this.getId())
             {
                 case "Porro":

@@ -11,7 +11,7 @@ namespace Multiplayer_flashero.Entidades.vivos
     class Jugador : Individuo
     {
         private int cobre;
-        //protected int exp;
+        //private int exp;
         private Arma armaEquipada = null;
         private Armadura armaduraEquipada = null;
         

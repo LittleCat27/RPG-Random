@@ -77,7 +77,7 @@ namespace Multiplayer_flashero.Entidades.vivos
             this.defensa = 1 * nivel;
             this.armaduraMax = 10 * nivel;
             this.armadura = this.armaduraMax;
-            this.danio = 3 * nivel;
+            this.danio = 4 * nivel;
             this.nombre = nombre;
         }
         

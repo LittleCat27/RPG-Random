@@ -10,17 +10,18 @@ namespace Multiplayer_flashero
 
         public static Jugador jugador = new Jugador(Console.ReadLine(), 1);
         public static Objeto[] inv = new Objeto[20];
-        public static Enemigo enemigo = new Enemigo("Aaraña", 1);
+        public static Enemigo enemigo = new Enemigo("Araña", 1);
         static void Main(string[] args)
         {
 
-            Console.Write(">Eliga un nombre para su personaje: ");
+            Console.Write("     Eliga un nombre para su personaje\n\n              >>          <<");
+            Console.SetCursorPosition(16, 2);
             int nivel = 1;
             Random x = new Random();
             /////////////////////////////////////////////  PARTIDA  /////////////////////////////////////
             do
             {
-                enemigo.reset("Araña", nivel);
+                enemigo.reset(getNombre(), (new Random().Next(nivel, (nivel+3))));
                 menuInicial();
                 while (enemigo.getVida() > 0 && jugador.getVida() > 0)
                 {
@@ -80,20 +81,22 @@ namespace Multiplayer_flashero
             Console.Clear();
             Console.WriteLine("=======================================================================================");
             Console.WriteLine("1-> Entrar al MaxiKiosco");
-            Console.WriteLine("2-> Ir a cagarse a piñas con una araña");
+            Console.WriteLine("2-> Ir a cagarse a piñas");
             Console.WriteLine("3-> Chabon con sustancias ilicitas");
             Console.WriteLine("4-> Mostrar inventario");
             Console.WriteLine("5-> Estado");
             Console.WriteLine("=======================================================================================");
-           /* 
-            * 
-            * Nuevo metodo
-            if (Console.ReadKey().Key == ConsoleKey.Enter)
-            {
-                Console.WriteLine(Console.ReadLine());
-            }
-            */
+            /* 
+             * 
+             * Nuevo metodo
+             if (Console.ReadKey().Key == ConsoleKey.Enter)
+             {
+                 Console.WriteLine(Console.ReadLine());
+             }
+             */
 
+            
+            
 
 
             try
@@ -424,6 +427,28 @@ namespace Multiplayer_flashero
         ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
         ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
+
+
+
+
+
+        private static string getNombre()
+        { 
+            switch (new Random().Next(1, 5))
+            {
+                case 1:
+                    return "Araña";
+                case 2:
+                    return "Perro laser";
+                case 3:
+                    return "Arbusto";
+                case 4:
+                    return "Carpincho";
+                default:
+                    return "Pablo";
+            }
+
+        }
 
 
     }
